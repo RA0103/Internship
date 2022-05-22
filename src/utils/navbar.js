@@ -1,49 +1,51 @@
 import React from "react";
+import Generic from "../pages/Generic";
+import Home from "../pages/Home";
 
 export const navbar = [
   {
     id: 1,
     title: "Home",
     path: "/home",
-    Element: <div />,
+    Element: <Home />,
     search: "?",
     hidden: false,
-    private: false
+    private: false,
   },
   {
     id: 2,
     title: "Properties",
     path: "/properties",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: false,
-    private: false
+    private: false,
   },
   {
     id: 3,
     title: "Contacts",
     path: "/contacts",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: false,
-    private: false
+    private: false,
   },
   {
     id: 4,
     title: "Sign In",
     path: "/signin",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: true,
-    private: false
+    private: false,
   },
   {
     id: 5,
     title: "Sign Up",
     path: "/signup",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: true,
-    private: false
+    private: false,
   },
 ];
