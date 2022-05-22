@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ReactComponent as price } from "../../assets/icons/price.svg";
+// import { ReactComponent as price } from "../../assets/icons/price.svg";
 import { ReactComponent as home } from "../../assets/icons/home-icon.svg";
-import { ReactComponent as key } from "../../assets/icons/car-key.svg";
+// import { ReactComponent as key } from "../../assets/icons/car-key.svg";
 import { ReactComponent as setting } from "../../assets/icons/setting-lines.svg";
 import { ReactComponent as search } from "../../assets/icons/search-icon.svg";
 
