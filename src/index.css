@@ -58,3 +58,8 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+
+.alice-carousel__stage {
+  display: flex;
+  gap: 10px;
+}
