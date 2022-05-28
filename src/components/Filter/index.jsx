@@ -2,29 +2,37 @@ import React from "react";
 import { Advanced, Container, Icon, Section } from "./styles";
 import { Popover } from "antd";
 import { Button, Input } from "../Generic";
+import UseReplace from "../../hooks/useReplace";
+import { useNavigate } from "react-router-dom";
 // import Button from '../Generic/Button'
 // import Input from '../Generic/Input'
 
 export const Filter = () => {
+  const navigate = useNavigate();
+  const onChange = ({ target }) => {
+    const { value, name } = target;
+    navigate(`${UseReplace(name, value)}`);
+  };
+
   const advancedSearch = (
     <Advanced>
       <Advanced.Title>Address</Advanced.Title>
       <Section>
-        <Input placeholder="Country" />
-        <Input placeholder="Region" />
-        <Input placeholder="City" />
-        <Input placeholder="Zip Code" />
+        <Input onChange={onChange} name="country" placeholder="Country" />
+        <Input onChange={onChange} name="region" placeholder="Region" />
+        <Input onChange={onChange} name="city" placeholder="City" />
+        <Input onChange={onChange} name="zip_code" placeholder="Zip Code" />
       </Section>
       <Advanced.Title>Apartment Info</Advanced.Title>
       <Section>
-        <Input placeholder="Adress" />
-        <Input placeholder="House Name" />
-        <Input placeholder="Rooms" />
+        <Input onChange={onChange} name="adress" placeholder="Adress" />
+        <Input onChange={onChange} name="house_name" placeholder="House Name" />
+        <Input onChange={onChange} name="rooms" placeholder="Rooms" />
       </Section>
       <Advanced.Title>Price</Advanced.Title>
       <Section>
-        <Input placeholder="Min Price" />
-        <Input placeholder="Max Price" />
+        <Input onChange={onChange} name="min_price" placeholder="Min Price" />
+        <Input onChange={onChange} name="max_price" placeholder="Max Price" />
       </Section>
       <Section>
         <Button width={"131px"} ml={20} type="primary">
@@ -35,22 +43,28 @@ export const Filter = () => {
   );
 
   return (
-    <Container>
-      <Input
-        pl={"50px"}
-        placeholder={"Enter an address, neighborhood, city, or ZIP code"}
-      >
-        <Icon.Home />
-      </Input>
-      <Popover placement="bottomRight" content={advancedSearch} trigger="click">
-        <Button width={"131px"} type={"secondary"}>
-          <Icon.Setting /> Advanced
+    <div className="center">
+      <Container>
+        <Input
+          pl={"50px"}
+          placeholder={"Enter an address, neighborhood, city, or ZIP code"}
+        >
+          <Icon.Home />
+        </Input>
+        <Popover
+          placement="bottomRight"
+          content={advancedSearch}
+          trigger="click"
+        >
+          <Button width={"131px"} type={"secondary"}>
+            <Icon.Setting /> Advanced
+          </Button>
+        </Popover>
+        <Button width={"131px"} type={"primary"}>
+          <Icon.Search /> Search
         </Button>
-      </Popover>
-      <Button width={"131px"} type={"primary"}>
-        <Icon.Search /> Search
-      </Button>
-    </Container>
+      </Container>
+    </div>
   );
 };
 export default Filter;

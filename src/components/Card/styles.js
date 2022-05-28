@@ -11,9 +11,9 @@ const Container = styled.div`
   overflow: hidden;
   flex-direction: column;
   width: 100%;
-  width: 380px;
-  /* min-width: 250px;
-  max-width: 380px; */
+  /* width: 380px; */
+  min-width: 250px;
+  max-width: 380px;
   height: 450px;
   background: #ffffff;
   margin: ${({ margin }) => margin && "0 1em"};

@@ -3,7 +3,6 @@ import Card from "../../Card";
 import { ArrowLeft, ArrowRight, Cards, Container, Wrapper } from "./styles";
 import AliceCarousel from "react-alice-carousel";
 
-// import {useMutation, useQuery} from 'react-query'
 
 export const Recommended = () => {
   const slider = useRef();
