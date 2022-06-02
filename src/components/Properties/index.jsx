@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Body, Container, Wrapper } from "./styles";
 import Filter from "../Filter";
 import { useQuery } from "react-query";
