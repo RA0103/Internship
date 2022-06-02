@@ -20,7 +20,9 @@ export const Card = ({ info, mr, ml, margin }) => {
         <User>
           <User.Img src={info?.user || nouser} />
         </User>
-        <Info.Title>{info?.description || "description"}</Info.Title>
+        <Info.Title>
+          {info?.description || "description"} Category:{info?.category?.name}
+        </Info.Title>
         <Info.Text>
           {info?.name || "house"}, {info?.address || "Address"},{" "}
           {info?.city || "City"} {info?.country || "Country"}

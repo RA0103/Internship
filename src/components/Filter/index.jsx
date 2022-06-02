@@ -4,8 +4,11 @@ import { Popover } from "antd";
 import { Button, Input } from "../Generic";
 import UseReplace from "../../hooks/useReplace";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
 // import Button from '../Generic/Button'
 // import Input from '../Generic/Input'
+
+const { REACT_APP_BASE_URL: url } = process.env;
 
 export const Filter = () => {
   const navigate = useNavigate();
@@ -13,6 +16,23 @@ export const Filter = () => {
     const { value, name } = target;
     navigate(`${UseReplace(name, value)}`);
   };
+
+  const { data } = useQuery(
+    "getHomeList",
+    () => {
+      return fetch(`${url}/v1/categories/list`, {
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        console.log(res, "ressss");
+      },
+    }
+  );
 
   const advancedSearch = (
     <Advanced>
@@ -33,6 +53,11 @@ export const Filter = () => {
       <Section>
         <Input onChange={onChange} name="min_price" placeholder="Min Price" />
         <Input onChange={onChange} name="max_price" placeholder="Max Price" />
+        <select name="" id="">
+          {data?.data?.map((value) => {
+            return <option value={value}>{value?.name}</option>;
+          })}
+        </select>
       </Section>
       <Section>
         <Button width={"131px"} ml={20} type="primary">

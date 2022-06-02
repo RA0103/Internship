@@ -3,6 +3,7 @@ import { Container } from "./styles";
 import Filter from "../Filter";
 import Carousel from "./Carousel";
 import Recommended from "./Recommended";
+import Category from "../Category";
 
 export const Home = () => {
   return (
@@ -10,6 +11,7 @@ export const Home = () => {
       <Filter />
       <Carousel />
       <Recommended />
+      <Category />
     </Container>
   );
 };
