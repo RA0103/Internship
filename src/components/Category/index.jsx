@@ -23,8 +23,10 @@ export const Category = () => {
     },
     {
       onSuccess: (res) => {
-        let list = res?.data?.map((value, index) => {
-          return <Card onClick={() => onSelect(value?.id)} title={value?.name} />;
+        let list = res?.data?.map((value) => {
+          return (
+            <Card onClick={() => onSelect(value?.id)} title={value?.name} />
+          );
         });
         setState(list);
       },
@@ -33,7 +35,6 @@ export const Category = () => {
 
   const slider = useRef();
 
-  // console.log(state, "st");
 
   return (
     <Container className="nocopy">

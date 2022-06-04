@@ -1,6 +1,7 @@
 import React from "react";
 import Generic from "../pages/Generic";
 import Home from "../pages/Home";
+import Detailes from "../pages/Detailes";
 import Properties from "../pages/Properties";
 
 export const navbar = [
@@ -23,6 +24,16 @@ export const navbar = [
     private: false,
   },
   {
+    id: "2-1",
+    title: "Properties",
+    path: "/properties/:id",
+    Element: <Detailes />,
+    search: "?",
+    hidden: true,
+    private: false,
+    param: true,
+  },
+  {
     id: 3,
     title: "Contacts",
     path: "/contacts",
@@ -39,6 +50,7 @@ export const navbar = [
     search: "?",
     hidden: true,
     private: false,
+    param: true,
   },
   {
     id: 5,
@@ -48,5 +60,6 @@ export const navbar = [
     search: "?",
     hidden: true,
     private: false,
+    param: true,
   },
 ];

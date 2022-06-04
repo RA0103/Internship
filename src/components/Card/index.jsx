@@ -12,9 +12,9 @@ import {
   User,
 } from "./styles";
 
-export const Card = ({ info, mr, ml, margin }) => {
+export const Card = ({ info, mr, ml, margin, onClick }) => {
   return (
-    <Container mr={mr} ml={ml} margin={margin}>
+    <Container mr={mr} ml={ml} margin={margin} onClick={onClick}>
       <Image src={info?.attachments[0]?.imgPath || noimg} alt="house image" />
       <InfoWrapper>
         <User>
