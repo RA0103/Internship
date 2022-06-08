@@ -25,8 +25,10 @@ const Tour = styled.div`
 
 Tour.Date = styled.div`
   grid-column: 1/5;
-  border: 1px solid red;
+  border: 1px solid green;
 `;
+
+
 
 Tour.Time = styled.div`
   grid-column: 5/9;
