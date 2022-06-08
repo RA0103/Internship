@@ -1,6 +1,12 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import Features from "./Features";
+import ImgPath from "./ImgPath";
+import Info from "./Info";
+import Map from "./Map";
+import PropertyDetailes from "./Property Details";
+import Schedule from "./Schedule a Tour";
 import { Container } from "./styles";
 
 export const Detailes = () => {
@@ -21,6 +27,15 @@ export const Detailes = () => {
     }
   );
 
-  return <Container>{data?.data?.address}</Container>;
+  return (
+    <Container>
+      <ImgPath />
+      <Info data={data} />
+      <Map data={data}/>
+      <PropertyDetailes data={data}/>
+      <Features />
+      <Schedule />
+    </Container>
+  );
 };
 export default Detailes;

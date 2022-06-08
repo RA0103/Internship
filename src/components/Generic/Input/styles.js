@@ -27,6 +27,9 @@ const Container = styled.input`
   width: ${({ width }) => (width ? width : "100%")};
   border-radius: 2px;
   padding-left: ${({ pl }) => pl || "15px"};
+  padding: ${({ pd }) => `${pd}px`};
+  padding-top: ${({ pt }) => `${pt}px`};
+  padding-bottom: ${({ pb }) => `${pb}px`};
   margin-right: ${({ mr }) => `${mr}px`};
   margin-left: ${({ ml }) => `${ml}px`};
   margin-top: ${({ mt }) => `${mt}px`};
