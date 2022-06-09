@@ -4,6 +4,7 @@ import Filter from "../Filter";
 import Carousel from "./Carousel";
 import Recommended from "./Recommended";
 import Category from "../Category";
+import Footer from "../Footer";
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
       <Carousel />
       <Recommended />
       <Category />
+      <Footer />
     </Container>
   );
 };

@@ -20,7 +20,7 @@ export const PropertyDetailes = ({ data }) => {
         </Title.Property>
         <Title.Id>
           <Title.Details>Price:</Title.Details>
-          <Title.Name>{data?.data?.price || 0}</Title.Name>
+          <Title.Name>${data?.data?.price || 0}</Title.Name>
         </Title.Id>
         <Title.Bed>
           <Title.Details>Bathrooms:</Title.Details>
