@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Icon, Image, InfoPage } from "./styles";
-import noimg from "../../../assets/images/noimg.jpg";
+import { Container, Icon, InfoPage } from "./styles";
 import CardDetail from "../CardDetail";
 
 export const Info = ({ data }) => {
