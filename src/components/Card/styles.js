@@ -148,6 +148,11 @@ Icons.Love = styled(heart)`
   :active {
     transform: scale(0.97);
   }
+/*   
+  path{
+    stroke: white;
+  }
+  background: red; */
 `;
 
 const User = styled.div`

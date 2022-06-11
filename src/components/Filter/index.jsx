@@ -41,7 +41,7 @@ export const Filter = () => {
   );
 
   const onSelect = (id) => {
-    setTitle(id)
+    setTitle(id);
     navigate(`/properties/${UseReplace("category_id", id)}`);
   };
 
@@ -49,35 +49,40 @@ export const Filter = () => {
     <Advanced>
       <Advanced.Title>Address</Advanced.Title>
       <Section>
-        <Input onChange={onChange} name="country" placeholder="Country" />
-        <Input onChange={onChange} name="region" placeholder="Region" />
-        <Input onChange={onChange} name="city" placeholder="City" />
-        <Input onChange={onChange} name="zip_code" placeholder="Zip Code" />
+        <Input onChange={onChange} name='country' placeholder='Country' />
+        <Input onChange={onChange} name='region' placeholder='Region' />
+        <Input onChange={onChange} name='city' placeholder='City' />
+        <Input onChange={onChange} name='zip_code' placeholder='Zip Code' />
       </Section>
       <Advanced.Title>Apartment Info</Advanced.Title>
       <Section>
-        <Input onChange={onChange} name="adress" placeholder="Adress" />
-        <Input onChange={onChange} name="house_name" placeholder="House Name" />
-        <Input onChange={onChange} name="rooms" placeholder="Rooms" />
+        <Input onChange={onChange} name='adress' placeholder='Adress' />
+        <Input onChange={onChange} name='house_name' placeholder='House Name' />
+        <Input onChange={onChange} name='rooms' placeholder='Rooms' />
       </Section>
       <Advanced.Title>Price</Advanced.Title>
       <Section>
-        <Input onChange={onChange} name="min_price" placeholder="Min Price" />
-        <Input onChange={onChange} name="max_price" placeholder="Max Price" />
+        <Input onChange={onChange} name='min_price' placeholder='Min Price' />
+        <Input onChange={onChange} name='max_price' placeholder='Max Price' />
         <Select
-          name=""
-          id=""
-          value={Number(title)}
+          name=''
+          id=''
+          value={Number(title) || "Category"}
           onChange={onSelect}
-          size="large"
+          size='large'
+          style={{minWidth: '124px'}}
         >
           {data?.data?.map((value) => {
-            return <Option key={value.id} value={value.id}>{value?.name}</Option>;
+            return (
+              <Option key={value.id} value={value.id}>
+                {value?.name}
+              </Option>
+            );
           })}
         </Select>
       </Section>
       <Section>
-        <Button width={"131px"} ml={20} type="primary">
+        <Button width={"131px"} ml={20} type='primary'>
           Search
         </Button>
       </Section>
@@ -85,7 +90,7 @@ export const Filter = () => {
   );
 
   return (
-    <div className="center">
+    <div className='center'>
       <Container>
         <Input
           pl={"50px"}
@@ -94,9 +99,9 @@ export const Filter = () => {
           <Icon.Home />
         </Input>
         <Popover
-          placement="bottomRight"
+          placement='bottomRight'
           content={advancedSearch}
-          trigger="click"
+          trigger='click'
         >
           <Button width={"131px"} type={"secondary"}>
             <Icon.Setting /> Advanced
