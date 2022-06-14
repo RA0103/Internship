@@ -218,6 +218,7 @@ Bottom.Container = styled.div`
 Bottom.Wrapper = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Logo = styled(logo)`

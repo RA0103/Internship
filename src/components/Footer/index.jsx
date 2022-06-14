@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Bottom,
   BottomDesctiption,
@@ -15,6 +16,9 @@ import {
 } from "./styles";
 
 export const Footer = () => {
+
+  const navigate = useNavigate()
+
   return (
     <Container>
       <Wrapper>
@@ -106,7 +110,7 @@ export const Footer = () => {
       </Wrapper>
       <Bottom>
         <Bottom.Container>
-          <Bottom.Wrapper>
+          <Bottom.Wrapper onClick={() => navigate("/home")}>
             <Logo />
             <LogoTitle>Houzing</LogoTitle>
           </Bottom.Wrapper>
