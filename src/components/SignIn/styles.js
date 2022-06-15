@@ -25,4 +25,8 @@ const Info = styled.div`
   margin-top: 17px;
 `;
 
-export { Container, Wrapper, Info };
+const Error = styled.div`
+  color: red;
+`
+
+export { Container, Wrapper, Info, Error };

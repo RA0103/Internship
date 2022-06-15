@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Detailes from "../pages/Detailes";
 import Properties from "../pages/Properties";
 import SignInPage from "../pages/Sign In";
+import MyProperties from "../pages/MyProperties";
+import AddHouse from "../pages/AddHouse";
 
 export const navbar = [
   {
@@ -58,6 +60,26 @@ export const navbar = [
     title: "Sign Up",
     path: "/signup",
     Element: <Generic />,
+    search: "?",
+    hidden: true,
+    private: false,
+    param: true,
+  },
+  {
+    id: 6,
+    title: "MyProperties",
+    path: "/profile/properties",
+    Element: <MyProperties />,
+    search: "?",
+    hidden: true,
+    private: false,
+    param: true,
+  },
+  {
+    id: 7,
+    title: "Add new house",
+    path: "/profile/addHouse",
+    Element: <AddHouse />,
     search: "?",
     hidden: true,
     private: false,

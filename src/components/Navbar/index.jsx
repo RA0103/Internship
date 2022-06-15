@@ -7,19 +7,32 @@ import {
   NavbarWrapper,
   Wrapper,
 } from "./styles";
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import { Button } from "../Generic/Button";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log(location, window?.location);
 
   const gotoSignIn = () => {
     navigate("/signin");
   };
 
+  const logOut = () => {
+    localStorage.removeItem("token");
+
+    if (location?.pathname?.includes("profile")) {
+      navigate("/home");
+    } else {
+      navigate(location.pathname);
+    }
+  };
+
   return (
-    <Wrapper className="nocopy">
+    <Wrapper className='nocopy'>
       <Container>
         <NavbarWrapper>
           <Logo onClick={() => navigate("/home")}>
@@ -38,9 +51,24 @@ export const Navbar = () => {
             })}
           </NavbarBody>
           <Logo>
-            <Button onClick={gotoSignIn} width={"120px"}>
-              SignIn
-            </Button>
+            {localStorage.getItem("token") ? (
+              <>
+                <Button
+                  mr={20}
+                  onClick={() => navigate("/profile")}
+                  width={"131px"}
+                >
+                  Profile
+                </Button>
+                <Button onClick={logOut} width={"131px"}>
+                  Log Out
+                </Button>
+              </>
+            ) : (
+              <Button onClick={gotoSignIn} width={"120px"}>
+                Sign In
+              </Button>
+            )}
           </Logo>
         </NavbarWrapper>
       </Container>
