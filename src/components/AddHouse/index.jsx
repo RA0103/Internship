@@ -4,6 +4,8 @@ import { Input, Button } from "../Generic";
 import { useMutation } from "react-query";
 import { useHttp } from "../../hooks/useHttp";
 import { useNavigate } from "react-router-dom";
+import Information from "./Information";
+import Additional from "./Additional";
 
 export const AddHouse = () => {
   const body = {
@@ -95,12 +97,8 @@ export const AddHouse = () => {
 
   return (
     <Container>
-      <Input placeholder={"Please Fill out this field"} width={200} />
-      <Input placeholder={"Please Fill out this field"} width={200} />
-      <Input placeholder={"Please Fill out this field"} width={200} />
-      <Input placeholder={"Please Fill out this field"} width={200} />
-      <Input placeholder={"Please Fill out this field"} width={200} />
-      <Input placeholder={"Please Fill out this field"} width={200} />
+      <Information />
+      <Additional />
       <Button onClick={submit} mt={20} width={"131px"} type={"primary"}>
         Submit
       </Button>
