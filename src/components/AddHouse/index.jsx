@@ -1,11 +1,14 @@
 import React from "react";
 import { Container } from "./styles";
-import { Input, Button } from "../Generic";
+import { Button } from "../Generic";
 import { useMutation } from "react-query";
 import { useHttp } from "../../hooks/useHttp";
 import { useNavigate } from "react-router-dom";
 import Information from "./Information";
 import Additional from "./Additional";
+import Price from "./Price";
+import Location from "./Location";
+import Media from "./Media";
 
 export const AddHouse = () => {
   const body = {
@@ -99,6 +102,9 @@ export const AddHouse = () => {
     <Container>
       <Information />
       <Additional />
+      <Price />
+      <Location />
+      <Media />
       <Button onClick={submit} mt={20} width={"131px"} type={"primary"}>
         Submit
       </Button>
