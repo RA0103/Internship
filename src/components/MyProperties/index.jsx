@@ -19,7 +19,7 @@ export const MyProperties = () => {
         },
       }).then((res) => res.json()),
     {
-      onSuccess: (res) => console.log(res, "ressss"),
+      onSuccess: (res) => res,
     }
   );
 

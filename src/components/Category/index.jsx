@@ -12,7 +12,6 @@ export const Category = () => {
   const navigate = useNavigate();
 
   const onSelect = (value) => {
-    console.log(value, "on select");
     navigate(`/properties?category_id=${value}`);
   };
 

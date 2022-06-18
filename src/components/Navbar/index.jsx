@@ -15,8 +15,6 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location, window?.location);
-
   const gotoSignIn = () => {
     navigate("/signin");
   };

@@ -30,7 +30,6 @@ export const Map = ({ data }) => {
   // const onUnmount = React.useCallback(function callback(map) {
   //     setMap(null)
   // }, [])
-  console.log(data?.location?.latitude.toString()[2]);
 
   return (
     <Container>

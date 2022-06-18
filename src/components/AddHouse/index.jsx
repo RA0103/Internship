@@ -92,10 +92,8 @@ export const AddHouse = () => {
         if (res?.success) {
           navigate("/profile/properties");
         }
-        console.log(res, "ressss");
       },
       onError: (res) => {
-        console.log(res, "errr");
       },
     });
   };
