@@ -9,10 +9,12 @@ import Additional from "./Additional";
 import Price from "./Price";
 import Location from "./Location";
 import Media from "./Media";
+import Amenities from "./Amenities";
+import SelectEnergyClass from "./Select Energy Class";
 
 export const AddHouse = () => {
   const body = {
-    address: "329 Queensberry Street",
+    address: "123 Baliqchi street",
     attachments: [
       {
         imgPath:
@@ -31,7 +33,7 @@ export const AddHouse = () => {
       },
     ],
     categoryId: 2,
-    city: "Jersey City",
+    city: "Baliqchi",
     componentsDto: {
       additional: "New Apartment Nice Wiew",
       airCondition: true,
@@ -41,8 +43,8 @@ export const AddHouse = () => {
       internet: true,
       tv: true,
     },
-    country: "United States",
-    description: "new House",
+    country: "Uzbekistan",
+    description: "yalqov",
     favorite: true,
     homeAmenitiesDto: {
       additional: "Greenville",
@@ -68,7 +70,7 @@ export const AddHouse = () => {
       latitude: 0,
       longitude: 0,
     },
-    name: "Luxury Family Loft by Victoria Park",
+    name: "Mukhammad Ali",
     price: 7.5,
     region: "string",
     salePrice: 2.8,
@@ -105,7 +107,15 @@ export const AddHouse = () => {
       <Price />
       <Location />
       <Media />
-      <Button onClick={submit} mt={20} width={"131px"} type={"primary"}>
+      <Amenities />
+      <SelectEnergyClass />
+      <Button
+        ml={775}
+        onClick={submit}
+        mt={20}
+        width={"280px"}
+        type={"primary"}
+      >
         Submit
       </Button>
     </Container>

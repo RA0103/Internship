@@ -11,6 +11,7 @@ export const Button = ({
   ml,
   mb,
   mt,
+  style
 }) => {
   return (
     <Container
@@ -24,6 +25,7 @@ export const Button = ({
       height={height}
       onClick={onClick}
       children={children}
+      style={style}
     >
       {children}
     </Container>
